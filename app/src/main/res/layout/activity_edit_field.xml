@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Edit field"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal">
+
+    </TextView>
+
+
+    <EditText
+        android:id="@+id/edit_field_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_field_name"
+        android:inputType="textAutoComplete"
+        android:padding="@dimen/small_padding"
+        android:textSize="18sp"
+        tools:ignore="Suspicious0dp" />
+
+    <EditText
+        android:id="@+id/edit_field_surface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_field_surface"
+        android:inputType="textAutoComplete"
+        android:padding="@dimen/small_padding"
+        android:textSize="18sp"
+        tools:ignore="Suspicious0dp" />
+
+    <EditText
+        android:id="@+id/edit_field_crop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:hint="Crop"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_field_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        android:textSize="18sp" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="72dp" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/button_color"
+        android:text="@string/button_save" />
+
+
+</LinearLayout>

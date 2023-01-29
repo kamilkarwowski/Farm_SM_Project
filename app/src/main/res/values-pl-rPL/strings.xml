@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Farma</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="next">Następny</string>
+    <string name="previous">Poprzedni</string>
+    <string name="search">Wyszukaj</string>
+    <string name="animal_deleted">Zwierzę zostało usunięte</string>
+    <string name="animal_edited">Zwierzę zostało zmodyfikowane</string>
+    <string name="empty_not_saved">Zwierze nie zostało zapisane z powodu pustych pól</string>
+    <string name="animal_added">Zwierzę zostało dodane</string>
+    <string name="hint_animal_name">Nazwa zwierzęcia</string>
+    <string name="hint_animal_gender">Płeć zwierzęcia</string>
+    <string name="button_save">Zapisz</string>
+    <string name="weather">Pogoda</string>
+    <string name="change">Zmień widok</string>
+    <string name="hint_field_name">Nazwa pola</string>
+    <string name="hint_field_surface">Powierzchnia pola</string>
+    <string name="field_added">Pole zostało dodane</string>
+    <string name="field_edited">Pole zostało zmodyfikowane</string>
+    <string name="field_deleted">Pole zostało usunięte</string>
+    <string name="geo">Geoportal</string>
+</resources>
