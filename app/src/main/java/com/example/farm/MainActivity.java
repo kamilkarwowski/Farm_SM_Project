@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -27,13 +26,16 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.farm.Animals.DetailAnimalActivity;
+import com.example.farm.Animals.EditAnimalActivity;
+import com.example.farm.Fields.FieldViewActivity;
+import com.example.farm.Weather.WeatherActivity;
 import com.example.farm.converter.DataConverter;
 import com.example.farm.database.entity.Animal;
 import com.example.farm.database.view.AnimalViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 

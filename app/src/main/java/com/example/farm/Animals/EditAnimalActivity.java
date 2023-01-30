@@ -1,7 +1,8 @@
-package com.example.farm;
+package com.example.farm.Animals;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Build;
@@ -17,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.farm.R;
 import com.example.farm.converter.DataConverter;
 
 public class EditAnimalActivity extends AppCompatActivity {
@@ -39,6 +41,7 @@ public class EditAnimalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_animal);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         editName = findViewById(R.id.edit_animal_title);

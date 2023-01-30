@@ -1,11 +1,13 @@
-package com.example.farm;
+package com.example.farm.Animals;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.farm.R;
 import com.example.farm.database.entity.Animal;
 import com.example.farm.database.view.AnimalViewModel;
 
@@ -33,6 +35,7 @@ public class DetailAnimalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_animal);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         name = findViewById(R.id.txtName);

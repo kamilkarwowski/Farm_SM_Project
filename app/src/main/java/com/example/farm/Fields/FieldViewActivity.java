@@ -1,6 +1,7 @@
-package com.example.farm;
+package com.example.farm.Fields;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.farm.R;
 import com.example.farm.database.entity.Field;
 import com.example.farm.database.view.FieldViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -48,6 +50,7 @@ public class FieldViewActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_field);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview2);
         final FieldAdapter adapter = new FieldAdapter();

@@ -15,18 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farm"
         tools:targetApi="31">
-        <activity android:name=".EditAnimalActivity"
+        <activity android:name=".Animals.EditAnimalActivity"
             android:exported="true"></activity>
-        <activity android:name=".DetailAnimalActivity"
+        <activity android:name=".Animals.DetailAnimalActivity"
             android:exported="true"></activity>
-        <activity android:name=".FieldViewActivity"
+        <activity android:name=".Fields.FieldViewActivity"
             android:exported="true"></activity>
-        <activity android:name=".FieldEditActivity"
+        <activity android:name=".Fields.FieldEditActivity"
             android:exported="true"
             android:theme="@style/Theme.Farm"></activity>
-        <activity android:name=".WeatherActivity"
+        <activity android:name=".Weather.WeatherActivity"
             android:exported="true"></activity>
-        <activity android:name=".FinderActivity"
+        <activity android:name=".Weather.FinderActivity"
             android:exported="true"></activity>
         <activity
             android:name=".MainActivity"

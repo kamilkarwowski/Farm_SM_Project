@@ -1,12 +1,15 @@
-package com.example.farm;
+package com.example.farm.Fields;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.farm.R;
 
 public class FieldEditActivity extends AppCompatActivity {
     public static final String EXTRA_EDIT_FIELD_NAME = "pb.edu.pl.EDIT_FIELD_NAME";
@@ -23,6 +26,7 @@ public class FieldEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_field);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         editName = findViewById(R.id.edit_field_name);

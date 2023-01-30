@@ -1,4 +1,4 @@
-package com.example.farm;
+package com.example.farm.Weather;
 
 import org.json.JSONException;
 import org.json.JSONObject;
