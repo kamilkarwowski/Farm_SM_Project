@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
 
@@ -96,17 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-
-//        MenuItem itemChange = menu.findItem(R.id.menu_change);
-//        Button btnChange= (Button) MenuItemCompat.getActionView(itemChange);
-
-//
-//        btnChange.setOnClickListener(v ->{
-//            Intent intent = new Intent(MainActivity.this, FieldViewActivity.class);
-//            startActivity(intent);
-//        });
-
         return true;
     }
 
@@ -118,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
                 animalList.add(animal);
             }
         }
-        //RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
         RecyclerView view = findViewById(R.id.recyclerview);
         AnimalAdapter animalAdapter = new AnimalAdapter();
@@ -129,15 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.menu_item_search|| id==R.id.menu_change) {
-//            return true;
-//        }
 
 
         switch (item.getItemId()) {
@@ -200,7 +179,6 @@ public class MainActivity extends AppCompatActivity {
         private Animal animal;
         private Bitmap bitmap;
         private ImageView animalImageView;
-        //private BreakIterator AnimalTextView;
 
         public AnimalHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.animal_item_list, parent, false));
@@ -212,7 +190,6 @@ public class MainActivity extends AppCompatActivity {
             animalImageView = itemView.findViewById(R.id.imgOfAnimal);
 
             View animalItem = itemView.findViewById(R.id.book_item);
-            //Button edit = findViewById(R.id.btnEdit);
             animalItem.setOnLongClickListener(v -> {
                 animalViewModel.delete(animal);
                 Snackbar.make(findViewById(R.id.coordinator_layout),

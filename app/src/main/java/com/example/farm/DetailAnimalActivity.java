@@ -45,7 +45,6 @@ public class DetailAnimalActivity extends AppCompatActivity {
         }
         back = findViewById(R.id.btnBack);
         back.setOnClickListener(e -> {
-            //Intent replyIntent = new Intent();
             finish();
         });
     }

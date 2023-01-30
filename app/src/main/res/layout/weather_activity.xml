@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:id="@+id/weatherIcon"
-        android:src="@drawable/ic_action_search"
+        android:src="@drawable/ic_action_sun"
         android:layout_marginTop="80dp"
         app:tint="@android:color/black">
     </ImageView>
@@ -82,5 +82,11 @@
             android:textSize="16sp" />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 
 </RelativeLayout>

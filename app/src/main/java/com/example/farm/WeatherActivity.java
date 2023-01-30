@@ -1,6 +1,7 @@
 package com.example.farm;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -53,6 +54,7 @@ public class WeatherActivity extends AppCompatActivity {
     LocationManager mLocationManager;
     LocationListener mLocationListner;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,13 +136,7 @@ public class WeatherActivity extends AppCompatActivity {
 
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE);
             return;
         }
@@ -162,7 +158,6 @@ public class WeatherActivity extends AppCompatActivity {
             }
             else
             {
-                //user denied the permission
             }
         }
     }
@@ -174,12 +169,11 @@ public class WeatherActivity extends AppCompatActivity {
         client.get(WEATHER_URL, params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-               // super.onSuccess(statusCode, headers, response);
                 Toast.makeText(WeatherActivity.this, "Date Get Success", Toast.LENGTH_SHORT).show();
                 WeatherData weatherData = WeatherData.fromJson(response);
                 System.out.println(weatherData.getMcity());
                 System.out.println(weatherData.getmWeatherType());
-                System.out.println(weatherData.getmTemperature());//rintln(weatherData.getmTemperature());
+                System.out.println(weatherData.getmTemperature());
                 assert weatherData != null;
                 updateUI(weatherData);
             }
@@ -190,24 +184,7 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
     }
-//        AsyncHttpClient client = new AsyncHttpClient();
-//        client.get(WEATHER_URL,params,new JsonHttpResponseHandler()).
-//        {
-//            @Override
-//            public void onSuccess(int statusCode, PreferenceActivity.Header[] headers, JSONObject response) {
-//
-//                Toast.makeText(WeatherActivity.this,"Data Get Success",Toast.LENGTH_SHORT).show();
-//
-//                WeatherData weatherD= WeatherData.fromJson(response);
-//                updateUI(weatherD);
-//
-//               // super.onSuccess(statusCode, headers, response);
-//            }
-//
-//            @Override
-//            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-//                //super.onFailure(statusCode, headers, throwable, errorResponse);
-//
+
     private  void updateUI(WeatherData weather){
         Temperature.setText(weather.getmTemperature());
         NameofCity.setText(weather.getMcity());

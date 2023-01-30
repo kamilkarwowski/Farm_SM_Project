@@ -59,7 +59,7 @@ public class FieldViewActivity extends AppCompatActivity {
 
         FloatingActionButton addAnimalButton = findViewById(R.id.add_button);
         addAnimalButton.setOnClickListener(v -> {
-            Intent intent = new Intent(FieldViewActivity.this, EditAnimalActivity.class);
+            Intent intent = new Intent(FieldViewActivity.this, FieldEditActivity.class);
             startActivityForResult(intent, NEW_FIELD_ACTIVITY_REQUEST_CODE);
         });
 
@@ -67,12 +67,10 @@ public class FieldViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         MenuInflater inflater =getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
 
-//        MenuItem menuItem = findViewById(R.id.menu_change);
-//        menuItem.setIcon(R.drawable.baseline_area_chart_24);
 
         MenuItem searchItem = menu.findItem(R.id.menu_item_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
@@ -103,7 +101,6 @@ public class FieldViewActivity extends AppCompatActivity {
                 fieldList.add(field);
             }
         }
-        //RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
         RecyclerView view = findViewById(R.id.recyclerview2);
         FieldAdapter fieldAdapter = new FieldAdapter();
@@ -114,15 +111,8 @@ public class FieldViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.menu_item_search || id==R.id.menu_change) {
-//            return true;
-//        }
 
         switch (item.getItemId()){
             case R.id.menu_change:
@@ -169,7 +159,6 @@ public class FieldViewActivity extends AppCompatActivity {
         private final TextView surfaceTextView;
         private final TextView cropTextView;
         private Field field;
-        //private BreakIterator AnimalTextView;
 
         public FieldHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.field_item_list, parent, false));
@@ -178,7 +167,6 @@ public class FieldViewActivity extends AppCompatActivity {
             surfaceTextView =itemView.findViewById(R.id.field_surface);
             cropTextView = itemView.findViewById(R.id.field_crop);
             View animalItem = itemView.findViewById(R.id.book_item);
-            //Button edit = findViewById(R.id.btnEdit);
             animalItem.setOnLongClickListener(v -> {
                 fieldViewModel.deleteField(field);
                 Snackbar.make(findViewById(R.id.coordinator_layout),
@@ -187,16 +175,7 @@ public class FieldViewActivity extends AppCompatActivity {
                         .show();
                 return true;
             });
-            //trzeba layoout dodać u mnie się zjebało + Activity
-//            animalItem.setOnClickListener(v -> {
-//                editedField = field;
-//                Intent intent = new Intent(FieldViewActivity.this, DetailAnimalActivity.class);
-//                intent.putExtra(FieldEditActivity.EXTRA_EDIT_FIELD_NAME, nameTextView.getText());
-//                intent.putExtra(String.valueOf(FieldEditActivity.EXTRA_EDIT_FIELD_SURFACE), surfaceTextView.getText());
-//                intent.putExtra(FieldEditActivity.EXTRA_EDIT_FIELD_CROPS, cropTextView.getText());
-//                intent.putExtra(FieldEditActivity.EXTRA_EDIT_FIELD_DESCRIPTION, field.getDescription());
-//                startActivity(intent);
-//            });
+
 
             animalItem.findViewById(R.id.btnEdit).setOnClickListener(v -> {
                 editedField = field;
